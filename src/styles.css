@@ -1,7 +1,7 @@
 .weather {
   max-width: 600px;
   margin-top: 40px;
-  font-family: "Cerebri-Sans", Helvetica, Arial, sans-serif;
+  font-family: arial, sans-serif;
   background: white;
   border: 1px solid #dadde1;
   border-radius: 16px;
