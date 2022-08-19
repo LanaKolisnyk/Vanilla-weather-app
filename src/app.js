@@ -25,13 +25,15 @@ function formatDate(date) {
 let today = document.querySelector("#today");
 today.innerHTML = `${formatDate(date)}`;
 
+let celsiusTemperature = null;
 function cityWeather(response) {
   console.log(response.data);
 
   let location = document.querySelector("#location");
   location.innerHTML = response.data.name;
   let tempNow = document.querySelector("#tempnow");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   tempNow.innerHTML = temperature;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
@@ -69,3 +71,19 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+function convertToFahrenheit(event) {
+  event.preventDefault;
+  let temperatureElement = document.querySelector("#tempnow");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function convertToCelsius(event) {
+  event.preventDefault;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#tempnow");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}

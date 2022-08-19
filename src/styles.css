@@ -87,7 +87,8 @@ form {
   margin: 10px 0;
 }
 
-.weather.unit {
+.unit {
+  box-sizing: border-box;
   color: rgb(33, 33, 33);
   font-size: 28px;
   line-height: 36px;
@@ -95,13 +96,21 @@ form {
   position: relative;
   line-height: 1;
   top: -34px;
+  text-decoration: none;
+  margin: 10px 0;
 }
 
 #fahrenheit-link {
+  color: #0d6efd;
   text-decoration: none;
 }
-#celsius-link {
+
+.active {
+  color: rgb(33, 33, 33);
   text-decoration: none;
+}
+.active:hover {
+  cursor: default;
 }
 
 .weather footer {
