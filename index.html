@@ -39,12 +39,12 @@
       <div class="WeatherInfo">
         <div class="row">
           <div class="col-6">
-            <h1 id="location">New York</h1>
+            <h1 id="location"></h1>
             <ul>
-              <li><span id="today">Monday 21:34</span>, broken clouds</li>
+             <li>Last updated: <span id="today"></span> <span id="wea-dis"></span></li>
               <li>
-                Humidity: <strong>43%</strong>, Wind:
-                <strong>5.66km/h</strong>
+                Humidity: <span id="humidity"><strong></strong></span>%, Wind: 
+                <strong><span id="wind"></span>km/h</strong>
               </li>
             </ul>
           </div>
@@ -52,7 +52,7 @@
             <div class="temperature-container d-flex justify-content-end">
               <canvas width="52" height="52"></canvas>
               <div>
-                <span class="temperature" id="tempnow">28</span><span class="unit"><a href="#" id="celsius-link">°C</a> |
+                <span class="temperature" id="tempnow"></span><span class="unit"><a href="#" id="celsius-link">°C</a> |
             <a href="#" id="fahrenheit-link">°F</a></span>
               </div>
             </div>

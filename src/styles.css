@@ -64,6 +64,7 @@ form {
   font-size: 16px;
   line-height: 20px;
   list-style: none;
+  text-transform: capitalize;
 }
 
 .weather li strong {
@@ -94,6 +95,13 @@ form {
   position: relative;
   line-height: 1;
   top: -34px;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+}
+#celsius-link {
+  text-decoration: none;
 }
 
 .weather footer {

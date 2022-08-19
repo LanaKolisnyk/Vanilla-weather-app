@@ -27,12 +27,22 @@ today.innerHTML = `${formatDate(date)}`;
 
 function cityWeather(response) {
   console.log(response.data);
+
   let location = document.querySelector("#location");
   location.innerHTML = response.data.name;
   let tempNow = document.querySelector("#tempnow");
   let temperature = Math.round(response.data.main.temp);
   tempNow.innerHTML = temperature;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = response.data.wind.speed;
+  let weatherDescription = document.querySelector("#wea-dis");
+  weatherDescription.innerHTML = response.data.weather[0].description;
 }
+let apiKey = "0593e3b15bfef2927adfa7fe26b2d02e";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kiev&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(cityWeather);
 
 function displayCity(event) {
   event.preventDefault();
@@ -48,29 +58,6 @@ function searchCity(city) {
 }
 let citySearch = document.querySelector("#searchbutton");
 citySearch.addEventListener("click", displayCity);
-
-function retrievePosition(position) {
-  let apiKey = "0593e3b15bfef2927adfa7fe26b2d02e";
-  console.log(position);
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(cityWeather);
-}
-function retrievePosition(position) {
-  let apiKey = "0593e3b15bfef2927adfa7fe26b2d02e";
-  let units = "metric";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(cityWeather);
-}
-navigator.geolocation.getCurrentPosition(retrievePosition);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
