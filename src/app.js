@@ -39,6 +39,11 @@ function cityWeather(response) {
   wind.innerHTML = response.data.wind.speed;
   let weatherDescription = document.querySelector("#wea-dis");
   weatherDescription.innerHTML = response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let apiKey = "0593e3b15bfef2927adfa7fe26b2d02e";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kiev&appid=${apiKey}&units=metric`;

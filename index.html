@@ -43,14 +43,15 @@
             <ul>
              <li>Last updated: <span id="today"></span> <span id="wea-dis"></span></li>
               <li>
-                Humidity: <span id="humidity"><strong></strong></span>%, Wind: 
-                <strong><span id="wind"></span>km/h</strong>
+               <div> Humidity: <span id="humidity"><strong></strong></span>%, Wind: 
+                <strong><span id="wind"></span>km/h</strong></div>
               </li>
             </ul>
           </div>
           <div class="col-6">
             <div class="temperature-container d-flex justify-content-end">
-              <canvas width="52" height="52"></canvas>
+                              <img src="" alt="Clear" id="icon" class="float-left" />
+                             <canvas width="52" height="52"></canvas>
               <div>
                 <span class="temperature" id="tempnow"></span><span class="unit"><a href="#" id="celsius-link">°C</a> |
             <a href="#" id="fahrenheit-link">°F</a></span>
