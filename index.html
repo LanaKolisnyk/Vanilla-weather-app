@@ -41,9 +41,9 @@
           <div class="col-6">
             <h1 id="location"></h1>
             <ul>
-             <li>Last updated: <span id="today"></span> <span id="wea-dis"></span></li>
+             <li>Last updated: <strong><span id="today"></span></strong> <span id="wea-dis"></span></li>
               <li>
-               <div> Humidity: <span id="humidity"><strong></strong></span>%, Wind: 
+               <div> Humidity: <strong><span id="humidity"></span>%</strong>, Wind: 
                 <strong><span id="wind"></span>km/h</strong></div>
               </li>
             </ul>
@@ -51,12 +51,12 @@
           <div class="col-6">
             <div class="temperature-container d-flex justify-content-end">
                               <img src="" alt="Clear" id="icon" class="float-left" />
-                             <canvas width="52" height="52"></canvas>
-              <div class="unit">
-                <span class="temperature" id="tempnow"></span><span><a href="#" class="active" id="celsius-link">°C</a> |
-            <a href="#"  id="fahrenheit-link">°F</a></span>
-              </div>
-            </div>
+                             </div>
+             
+              <div class="d-flex justify-content-end"><span class="temperature unit" id="tempnow"></span><a href="#" class="active unit" id="celsius-link">°C |</a>
+            <a href="#" class="unit"  id="fahrenheit-link">°F</a></div>
+             
+            
           </div>
         </div>
      
