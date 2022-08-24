@@ -117,6 +117,7 @@ form {
 }
 
 .WeatherForecast {
+  text-align: center;
   margin: 30px 0;
   border-bottom: 1px solid #f9f7fe;
   padding-bottom: 40px;
@@ -141,11 +142,6 @@ form {
 .WeatherForecast .forecast-temperature-min {
   margin-left: 10px;
   opacity: 0.6;
-}
-
-.Weather .WeatherForecast canvas {
-  display: block;
-  margin: 20px auto;
 }
 
 .weather footer {
